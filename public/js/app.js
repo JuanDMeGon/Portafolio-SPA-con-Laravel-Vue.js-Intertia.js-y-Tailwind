@@ -27838,19 +27838,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
-var _hoisted_1 = {
-  "class": "max-w-6xl mx-auto sm:px-6 lg:px-8"
-};
 
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "flex justify-center pt-8 sm:justify-start sm:pt-0"
-}, " Welcome3 ", -1
-/* HOISTED */
-);
+var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<header class=\"bg-gray-800 pt-16 h-screen px-72\"><div class=\"h-2/3 flex flex-wrap content-between border-gray-600 pb-36\"><p class=\"border-b-2 font-bold border-gray-400 pb-3 text-2xl text-gray-300 uppercase\"> Hey! This is Juan. I&#39;m a Software Engineer and I would like to work with you. </p></div></header><section class=\"bg-gray-200 text-gray-800 px-72 py10 h-screen\"><h2 class=\"text-6xl font-bold pt-3\">Skills</h2></section><section class=\"bg-gray-600 text-gray-200 px-72 py10 h-screen\"><h2 class=\"text-6xl font-bold pt-3\">Projects</h2></section><footer class=\"flex justify-between py-10 px-72 bg-gray-800 text-gray-300 text-xl\"><p>© JuanDMeGon. All rights reserved.</p><div class=\"flex justify-evenly items-center\"> GitHub Twitter StackOverflow </div></footer>", 4);
 
-var _hoisted_3 = [_hoisted_2];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, _hoisted_3);
+  return _hoisted_1;
 }
 
 /***/ }),
