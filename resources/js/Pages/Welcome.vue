@@ -103,13 +103,13 @@
     <Section class="bg-gray-600 text-gray-200 h-screen">
         <h2 class="text-6xl font-bold pt-3">Projects</h2>
 
-        <div v-for="project in projects">
+        <div v-for="(project, index) in projects">
             <Project
                 :title="project.title"
                 :description="project.description"
                 :color="project.color"
             >
-                <BeakerIcon></BeakerIcon>
+                <component :is="componentName(index)"></component>
             </Project>
         </div>
 
@@ -152,7 +152,7 @@
 </template>
 
 <script>
-    import { defineComponent } from 'vue'
+    import { defineComponent, defineAsyncComponent } from 'vue'
     import { Head, Link } from '@inertiajs/inertia-vue3'
 
     import JetApplicationMark from '@/Jetstream/ApplicationMark'
@@ -161,8 +161,6 @@
     import Section from '@/Components/Section'
     import Skill from '@/Components/Skill'
     import Project from '@/Components/Project'
-
-    import { BeakerIcon } from '@heroicons/vue/solid'
 
     export default defineComponent({
         components: {
@@ -173,7 +171,6 @@
             Section,
             Skill,
             Project,
-            BeakerIcon,
         },
 
         props: {
@@ -181,6 +178,17 @@
             canRegister: Boolean,
             skills: Object,
             projects: Object,
+        },
+        methods: {
+            componentName(index) {
+                return defineAsyncComponent(() =>
+                    import (
+                        '@heroicons/vue/solid/'
+                        + this.projects[index].icon_name
+                        + 'Icon.js'
+                    )
+                )
+            }
         }
     })
 </script>
