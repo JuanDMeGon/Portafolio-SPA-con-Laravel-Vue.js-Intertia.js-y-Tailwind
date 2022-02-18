@@ -78,6 +78,14 @@
     <Section id="skills" class="bg-gray-200 text-gray-800 h-screen">
         <h2 class="text-6xl font-bold pt-3">Skills</h2>
 
+        <div class="grid grid-cols-2">
+            <div v-for="skill in skills">
+                <Skill :background="skill.color">
+                    {{ skill.name }}
+                </Skill>
+            </div>
+        </div>
+
         <div class="flex justify-center mt-10">
             <jet-button class="
                 bg-indigo-800
@@ -133,6 +141,7 @@
     import JetButton from '@/Jetstream/Button'
 
     import Section from '@/Components/Section'
+    import Skill from '@/Components/Skill'
 
     export default defineComponent({
         components: {
@@ -141,11 +150,13 @@
             JetApplicationMark,
             JetButton,
             Section,
+            Skill,
         },
 
         props: {
             canLogin: Boolean,
             canRegister: Boolean,
+            skills: Boolean,
         }
     })
 </script>
