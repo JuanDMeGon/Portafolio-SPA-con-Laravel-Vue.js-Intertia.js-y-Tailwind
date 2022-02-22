@@ -113,6 +113,11 @@
                                 </jet-button>
                                 <jet-button
                                     class="border border-red-500 text-red-500 bg-red-50 hover:bg-red-100 ml-2"
+                                    @click="
+                                        method = 'delete';
+                                        action = route('skills.destroy', [skill.id]);
+                                        submit();
+                                    "
                                 >
                                     Delete
                                 </jet-button>
@@ -120,7 +125,7 @@
                         </tr>
                     </tbody>
                 </table>
-                <div v-else class="bg-red-100 border border-red-400 p-3 rounded-lg text-red-800">
+                <div v-else class="bg-red-100 border border-red-400 p-3 rounded-lg text-red-800 mt-5 text-left">
                     There are no skills yet. Let's create one :)
                 </div>
             </div>
