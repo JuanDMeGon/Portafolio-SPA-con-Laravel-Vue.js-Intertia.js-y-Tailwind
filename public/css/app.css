@@ -1173,6 +1173,9 @@ select {
 .w-2 {
   width: 0.5rem;
 }
+.w-1 {
+  width: 0.25rem;
+}
 .min-w-0 {
   min-width: 0px;
 }
