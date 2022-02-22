@@ -19,7 +19,7 @@
                         font-bold
                         rounded-xl
                     "
-                    @click="acting = true"
+                    @click="acting = true; method = 'post'; action = route('skills.store')"
                 >
                     Add New +
                 </jet-button>
@@ -101,6 +101,13 @@
                             <td class="px-6 py-4">
                                 <jet-button
                                     class="border border-indigo-500 text-indigo-500 bg-indigo-50 hover:bg-indigo-100 mr-2"
+                                    @click="
+                                        acting = true;
+                                        method = 'put';
+                                        action = route('skills.update', [skill.id]);
+                                        form.name = skill.name;
+                                        form.color = skill.color;
+                                    "
                                 >
                                     Edit
                                 </jet-button>
@@ -139,6 +146,8 @@
         data() {
             return {
                 acting: null,
+                method: null,
+                action: null,
                 form: this.$inertia.form({
                     'name': '',
                     'color': '',
@@ -147,7 +156,7 @@
         },
         methods: {
             submit() {
-                this.form.submit('post', route('skills.store'), {
+                this.form.submit(this.method, this.action, {
                     onSuccess: () => {
                         this.form.reset('name');
                         this.form.reset('color');
